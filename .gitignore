@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+portfolio/node_modules/
+
+# Production build
+dist/
+portfolio/dist/
+
+# Local env files
+.env*.local
+
+# Editor directories
+.vscode/
+.idea/
+.DS_Store
+.agents/
+push.bat
+portfolio/push.bat
