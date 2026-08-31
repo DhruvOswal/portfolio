@@ -17,7 +17,7 @@ export default function Leadership() {
   return (
     <div className="page">
       <div className="wrap">
-        <motion.div {...fadeUp} className="eyebrow">06 / LEADERSHIP</motion.div>
+        <motion.div {...fadeUp} className="eyebrow">05 / LEADERSHIP</motion.div>
         <motion.h1 {...fadeUp} className="page-title">
           Running the other kind of system: people, logistics, events.
         </motion.h1>

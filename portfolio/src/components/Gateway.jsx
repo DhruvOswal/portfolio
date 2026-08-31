@@ -77,7 +77,7 @@ export default function Gateway({ onUnlock }) {
           
           <h2 className="display">SECURE ACCESS REQUIRED</h2>
           <p className="gateway-subtitle">
-            Experience, Education, Leadership, and Contact details are locked. Enter your email to get the details on your mail and unlock instant access.
+            Experience, Leadership, and Contact details are locked. Enter your email to get the details on your mail and unlock instant access.
           </p>
         </div>
 

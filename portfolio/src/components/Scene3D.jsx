@@ -1,7 +1,6 @@
 import { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Points, PointMaterial } from '@react-three/drei';
-import * as THREE from 'three';
 
 // Wireframe icosahedron that slowly tumbles — the "signature" 3D element
 function TumblingIcosahedron() {
@@ -70,6 +69,18 @@ export default function Scene3D({ variant = 'hero' }) {
       >
         <Suspense fallback={null}>
           <ParticleField />
+          {variant === 'hero' && (
+            <group position={[1.8, 0, 0]}>
+              <TumblingIcosahedron />
+              <InnerCore />
+            </group>
+          )}
+          {variant === 'centered' && (
+            <group position={[0, 0, 0]}>
+              <TumblingIcosahedron />
+              <InnerCore />
+            </group>
+          )}
         </Suspense>
       </Canvas>
     </div>

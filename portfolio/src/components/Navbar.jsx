@@ -7,7 +7,7 @@ export default function Navbar({ unlocked }) {
   const [message, setMessage] = useState('');
   const [sendState, setSendState] = useState('idle'); // 'idle' | 'sending' | 'sent'
   
-  const lockedTabs = ['/experience', '/education', '/leadership', '/contact'];
+  const lockedTabs = ['/experience', '/leadership', '/contact'];
 
   const handleSendMessage = (e) => {
     e.preventDefault();

@@ -17,7 +17,7 @@ export default function Contact() {
         <Scene3D variant="centered" />
       </div>
       <div className="wrap" style={{ position: 'relative', zIndex: 2 }}>
-        <motion.div {...fadeUp} className="eyebrow">07 / CONTACT</motion.div>
+        <motion.div {...fadeUp} className="eyebrow">06 / CONTACT</motion.div>
         <motion.h1 {...fadeUp} className="page-title">Let's build something.</motion.h1>
 
         <div className="contact-grid" style={{ marginTop: 40 }}>

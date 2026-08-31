@@ -66,11 +66,6 @@ export const projects = [
   { name: 'Quantro', tags: ['AI', 'Fintech', 'In Progress'], desc: 'AI-driven fintech platform delivering personalized financial insights.', details: ['Currently in active development', 'Combines AI-driven analysis with a decision layer for everyday investors', 'Core focus of my current build cycle'] },
 ];
 
-export const education = [
-  { year: '2023 — 2027', name: 'B.Tech, Computer Science Engineering', meta: 'Amity School of Engineering & Technology, Amity University Mumbai · CGPA 7.8 · AI & ML Specialization · Minor in Business Management' },
-  { year: '2022', name: 'Class XII — HSC Board', meta: 'Sardar Vallabhbhai Patel College, Dahisar' },
-  { year: '2020', name: 'Class X — SSC Board', meta: 'S.L. Porwal High School, Bhayander West' },
-];
 
 export const leadership = {
   Leadership: [
@@ -121,7 +116,6 @@ export const navLinks = [
   { to: '/experience', label: 'Experience' },
   { to: '/skills', label: 'Skills' },
   { to: '/projects', label: 'Projects' },
-  { to: '/education', label: 'Education' },
   { to: '/leadership', label: 'Leadership' },
   { to: '/contact', label: 'Contact' },
 ];

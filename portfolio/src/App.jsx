@@ -8,7 +8,6 @@ import About from './pages/About';
 import Experience from './pages/Experience';
 import Skills from './pages/Skills';
 import Projects from './pages/Projects';
-import Education from './pages/Education';
 import Leadership from './pages/Leadership';
 import Contact from './pages/Contact';
 import Gateway from './components/Gateway';
@@ -17,26 +16,26 @@ function CustomCursor() {
   const dotRef = useRef(null);
   useEffect(() => {
     const dot = dotRef.current;
+    if (!dot) return;
     function move(e) {
       dot.style.left = e.clientX + 'px';
       dot.style.top = e.clientY + 'px';
     }
-    function onEnter() { dot.classList.add('hover'); }
-    function onLeave() { dot.classList.remove('hover'); }
+    function handleMouseOver(e) {
+      if (e.target && e.target.closest && e.target.closest('a, button, .proj-card, .skill-tag, .contact-tile, .filter-btn, .tab-btn, .chip, .lang-pill')) {
+        dot.classList.add('hover');
+      } else {
+        dot.classList.remove('hover');
+      }
+    }
     window.addEventListener('mousemove', move);
-    const interactive = document.querySelectorAll('a, button, .proj-card, .skill-tag, .contact-tile');
-    interactive.forEach((el) => {
-      el.addEventListener('mouseenter', onEnter);
-      el.addEventListener('mouseleave', onLeave);
-    });
+    window.addEventListener('mouseover', handleMouseOver);
+
     return () => {
       window.removeEventListener('mousemove', move);
-      interactive.forEach((el) => {
-        el.removeEventListener('mouseenter', onEnter);
-        el.removeEventListener('mouseleave', onLeave);
-      });
+      window.removeEventListener('mouseover', handleMouseOver);
     };
-  });
+  }, []);
   return <div id="cursor-dot" ref={dotRef} />;
 }
 
@@ -63,7 +62,6 @@ function AnimatedRoutes({ unlocked, onUnlock }) {
           <Route path="/experience" element={renderLocked(<Experience />)} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/education" element={renderLocked(<Education />)} />
           <Route path="/leadership" element={renderLocked(<Leadership />)} />
           <Route path="/contact" element={renderLocked(<Contact />)} />
         </Routes>
