@@ -1,38 +1,6 @@
 import { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, Points, PointMaterial } from '@react-three/drei';
-
-// Wireframe icosahedron that slowly tumbles — the "signature" 3D element
-function TumblingIcosahedron() {
-  const meshRef = useRef();
-  useFrame((_, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += delta * 0.08;
-      meshRef.current.rotation.y += delta * 0.12;
-    }
-  });
-  return (
-    <Float speed={1.4} rotationIntensity={0.4} floatIntensity={0.9}>
-      <mesh ref={meshRef} scale={2.1}>
-        <icosahedronGeometry args={[1, 1]} />
-        <meshBasicMaterial color="#7C5CFF" wireframe transparent opacity={0.55} />
-      </mesh>
-    </Float>
-  );
-}
-
-function InnerCore() {
-  const meshRef = useRef();
-  useFrame((_, delta) => {
-    if (meshRef.current) meshRef.current.rotation.y -= delta * 0.2;
-  });
-  return (
-    <mesh ref={meshRef} scale={1.15}>
-      <octahedronGeometry args={[1, 0]} />
-      <meshBasicMaterial color="#B8FF3D" wireframe transparent opacity={0.35} />
-    </mesh>
-  );
-}
+import { Points, PointMaterial } from '@react-three/drei';
 
 // Ambient particle field drifting in the background
 function ParticleField({ count = 700 }) {
@@ -59,7 +27,7 @@ function ParticleField({ count = 700 }) {
   );
 }
 
-export default function Scene3D({ variant = 'hero' }) {
+export default function Scene3D() {
   return (
     <div style={{ position: 'absolute', inset: 0, zIndex: 0 }} aria-hidden="true">
       <Canvas
@@ -69,18 +37,6 @@ export default function Scene3D({ variant = 'hero' }) {
       >
         <Suspense fallback={null}>
           <ParticleField />
-          {variant === 'hero' && (
-            <group position={[1.8, 0, 0]}>
-              <TumblingIcosahedron />
-              <InnerCore />
-            </group>
-          )}
-          {variant === 'centered' && (
-            <group position={[0, 0, 0]}>
-              <TumblingIcosahedron />
-              <InnerCore />
-            </group>
-          )}
         </Suspense>
       </Canvas>
     </div>
