@@ -22,11 +22,11 @@ export default function Contact() {
 
         <div className="contact-grid" style={{ marginTop: 40 }}>
           {[
-            { href: `mailto:${profile.email}`, k: 'Email', v: profile.email },
-            { href: `tel:${profile.phone.replace(/\s/g, '')}`, k: 'Phone', v: profile.phone },
-            { href: profile.linkedin, k: 'LinkedIn', v: profile.linkedinHandle, ext: true },
-            { href: profile.github, k: 'GitHub', v: profile.githubHandle, ext: true },
-          ].map((c, i) => (
+            profile.email && { href: `mailto:${profile.email}`, k: 'Email', v: profile.email },
+            profile.phone && { href: `tel:${profile.phone.replace(/\s/g, '')}`, k: 'Phone', v: profile.phone },
+            profile.linkedin && { href: profile.linkedin, k: 'LinkedIn', v: profile.linkedinHandle, ext: true },
+            profile.github && { href: profile.github, k: 'GitHub', v: profile.githubHandle, ext: true },
+          ].filter(Boolean).map((c, i) => (
             <motion.div
               key={c.k}
               initial={{ opacity: 0, y: 24 }}

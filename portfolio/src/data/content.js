@@ -3,8 +3,7 @@ export const profile = {
   fullName: 'Dhruv Dinesh Oswal',
   role: 'Full-Stack Developer & AI/Fintech Builder',
   location: 'Navi Mumbai, India',
-  email: 'oswal.dinesh@s.amity.edu',
-  phone: '+91 83569 42577',
+  email: 'connect.oswaldv@gmail.com',
   linkedin: 'https://linkedin.com/in/dhruv_oswal',
   github: 'https://github.com/DhruvOswal',
   linkedinHandle: 'dhruv_oswal',
@@ -16,8 +15,6 @@ export const aboutFacts = [
   { k: 'Based In', v: 'Navi Mumbai, India' },
   { k: 'Studying', v: 'B.Tech CSE, Amity University Mumbai (23 – 27)' },
   { k: 'Specialization', v: 'AI & Machine Learning' },
-  { k: 'Minor', v: 'Business Management' },
-  { k: 'CGPA', v: '7.8' },
 ];
 
 export const aboutParagraphs = [
