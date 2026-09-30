@@ -4,7 +4,7 @@ export const profile = {
   role: 'Full-Stack Developer & AI/Fintech Builder',
   location: 'Navi Mumbai, India',
   email: 'connect.oswaldv@gmail.com',
-  linkedin: 'https://linkedin.com/in/dhruv_oswal',
+  linkedin: 'https://linkedin.com/in/dhruv-oswal',
   github: 'https://github.com/DhruvOswal',
   linkedinHandle: 'dhruv_oswal',
   githubHandle: 'DhruvOswal',
