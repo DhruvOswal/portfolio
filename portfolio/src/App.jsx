@@ -11,6 +11,7 @@ import Projects from './pages/Projects';
 import Leadership from './pages/Leadership';
 import Contact from './pages/Contact';
 import Gateway from './components/Gateway';
+import { Analytics } from '@vercel/analytics/react';
 
 function CustomCursor() {
   const dotRef = useRef(null);
@@ -88,6 +89,7 @@ export default function App() {
       <Navbar unlocked={unlocked} />
       <AnimatedRoutes unlocked={unlocked} onUnlock={handleUnlock} />
       <Footer />
+      <Analytics />
     </BrowserRouter>
   );
 }
